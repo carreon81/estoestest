@@ -1,0 +1,39 @@
+<form class="addProject flex column" [formGroup]="editForm">
+  <div>
+    <label for="projectName" class="form-label title">Project name * <span class="textRequired"> (minimum 4 letters)</span></label>
+    <input formControlName="projectName" type="text" class="form-control" minlength="4" id="projectName"  #projectName placeholder="Project name" required>
+  </div>
+  <div>
+    <label for="Description" class="form-label title">Description * <span class="textRequired"> (minimum 4 letters)</span></label>
+    <input formControlName="description" type="text" class="form-control" minlength="4" id="Description" #description placeholder="no description" >
+  </div>
+  <div>
+    <label for="projectManager" class="form-label title">Project manager</label>
+    <select formControlName="projectManager" class="form-select" aria-label="Default select example" #projectManager id="projectManager">
+      <option value="" disabled selected hidden> Select a project manager</option>
+      <option value="Walt Cosani">Walt Cosani</option>
+      <option value="Emma Carreon">Emma Carreon</option>
+    </select>
+  </div>
+  <div>
+    <label for="assigned" class="form-label title">Assigned to</label>
+    <select formControlName="assigned" class="form-select" #assigned aria-label="Default select example" id="assigned">
+      <option value="" disabled selected hidden>Select an assignment</option>
+      <option  value="Ignacio Truffa">Ignacio Truffa</option>
+      <option  value="Emma Carreon">Emma Carreon</option>
+      <option  value="Emma Carreon">Walt Cosani</option>
+    </select>
+  </div>
+  <div>
+    <label for="status" class="form-label title">Status</label>
+    <select formControlName="status" class="form-select" #status aria-label="Default select example" id="status" >
+      <option value="" disabled selected hidden>Select a status</option>
+      <option value="Enabled">Enabled</option>
+      <option value="Disabled">Disabled</option>
+    </select>
+  </div>
+  <button type="button" class="btn addBtnBox" (click)="saveEdit()"  [disabled]="editForm.invalid" [ngClass]="editForm.invalid ? 'disabled': 'validButton' ">
+    Create project
+  </button>
+</form>
+

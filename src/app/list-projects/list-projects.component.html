@@ -1,0 +1,40 @@
+<table mat-table class="borderAndShadow" [dataSource]="dataSource">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Project info</th>
+    <td mat-cell *matCellDef="let proyect">
+      <div class="colum">
+        <p>{{proyect.projectName}}</p>
+        <p class="grey">Creation Date: {{proyect.creationDate}}</p>
+      </div>
+      <div class="row" *ngIf="innerWidth < 800"><img class="userPhoto" [src]="'../assets/'+proyect.userImg+'.jpeg'" alt='image'>{{proyect.assigned}}</div>
+ </td>
+  </ng-container>
+  <ng-container matColumnDef="projectManager" >
+    <th mat-header-cell *matHeaderCellDef [hidden]="innerWidth < 800">Project Manager</th>
+    <td mat-cell *matCellDef="let proyect" [hidden]="innerWidth < 800">
+      <div class="row"><span class="circleName">{{firtsLetter(proyect.projectManager)}} </span><p>{{proyect.projectManager}}</p></div>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="assigned">
+    <th mat-header-cell *matHeaderCellDef [hidden]="innerWidth < 800">Assigned to</th>
+    <td mat-cell *matCellDef="let proyect" [hidden]="innerWidth < 800">
+      <div class="row"><img class="userPhoto" [src]="'../assets/'+proyect.userImg+'.jpeg'" alt='image'><p>{{proyect.assigned}}</p></div></td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef [hidden]="innerWidth < 800"> Status </th>
+    <td mat-cell *matCellDef="let proyect" [hidden]="innerWidth < 800"><span class="statusText">{{proyect.status}}</span></td>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action </th>
+    <td  mat-cell *matCellDef="let proyect;let i = index">
+      <span class="buttonMenu material-icons" (click)="openPopMenu($event,proyect,i)">more_vert</span>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay" [hidden]="innerWidth < 800 "></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+</table>
+
+<div  *ngIf="showMenu" class="menuProject flex column" [ngStyle]="{'left': '83vw','top': top+'px'}">
+  <div (click)="edit()" class="flex itemCenter menuBottom"><img [src]="'../assets/edit.svg'"  class="icon edit" alt='image'>Edit</div>
+  <div (click)="deleteProject()" class="flex itemCenter" ><img [src]="'../assets/delete.svg'" class="icon delete" alt='image'>Delete</div>
+</div>

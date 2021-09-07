@@ -1,0 +1,14 @@
+<div class="flex column header">
+  <div class="flex item">
+    <h3 class="logo">LOGO</h3>
+  </div>
+  <div class="flex item nav">
+    <div class="flex submenu">
+      <div id="backButton" class="flex" *ngIf="sub != 'My projects'"><div class="flex" (click)="backToList()"><img [src]="'../assets/arrowLeft.svg'"  alt='image'><p  class="backText" >Back</p></div></div>
+      <h3 class="myProjects">{{sub}}</h3>
+    </div>
+    <button *ngIf="sub=='My projects'"class="addBtnBox" (click)="addProject()">
+      + Add project
+    </button>
+  </div>
+</div>

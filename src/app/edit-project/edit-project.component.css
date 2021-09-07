@@ -1,0 +1,76 @@
+ @import url( https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css);
+
+.addProject{
+  width: 50vw;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+  border-radius: 4px;
+  background: white
+}
+
+.title{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #262626;
+  margin: 2px 0px;
+}
+
+.disabled{
+  background: #dde2e0;
+}
+
+.textRequired{
+  font-size: small;
+}
+
+.validButton{
+
+  background: #F5222D;
+}
+
+input,select{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #595959;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  height: 77vh;
+}
+
+.flex div{
+  margin: 12px 0px;
+}
+
+.addBtnBox{
+  width: fit-content;
+  height: 40px;
+  padding: 8px 17px;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  border: 0px;
+}
+
+option{
+  width: 100%;
+}
+
+@media (max-width:800px){
+  .addProject{
+    width: 100%;
+  }
+}

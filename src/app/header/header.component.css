@@ -1,0 +1,84 @@
+.flex{
+  display: flex;
+}
+
+h3{
+  margin: 0;
+}
+
+.flex.item{
+  padding: 10px 45px;
+  align-items: center;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.addBtnBox{
+  height: 40px;
+  width: 134px;
+  padding: 8px 17px;
+  background: #F5222D;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  border: 0px;
+}
+
+.addBtnBox:hover{
+  cursor: pointer;
+}
+
+#backButton:hover{
+  cursor: pointer;
+}
+
+.backText{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0px 25px 0px 10px;
+}
+
+p{
+  margin: 0px;
+}
+
+.submenu{
+  align-items: center;
+}
+
+.myProjects{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.logo{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 32px;
+  color: #BDBDBD;
+}
+
+.nav{
+  justify-content: space-between;
+  border-top:1px solid #F0F2F5;
+}
+.header{
+  background-color: white;
+  margin-bottom: 45px;
+}
