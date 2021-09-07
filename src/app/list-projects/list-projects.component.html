@@ -6,7 +6,7 @@
         <p>{{proyect.projectName}}</p>
         <p class="grey">Creation Date: {{proyect.creationDate}}</p>
       </div>
-      <div class="row" *ngIf="innerWidth < 800"><img class="userPhoto" [src]="'./assets/'+proyect.userImg+'.jpeg'" alt='image'>{{proyect.assigned}}</div>
+      <div class="row" *ngIf="innerWidth < 800"><img class="userPhoto" [src]="'/assets/'+proyect.userImg+'.jpeg'" alt='image'>{{proyect.assigned}}</div>
  </td>
   </ng-container>
   <ng-container matColumnDef="projectManager" >
