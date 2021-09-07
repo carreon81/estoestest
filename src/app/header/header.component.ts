@@ -25,8 +25,4 @@ export class HeaderComponent implements OnInit {
     this.changeView.emit('list');
     this.sub="My projects";
   }
-
-  newAndEditSave(e:any){
-    this.sub = e;
-  }
 }
