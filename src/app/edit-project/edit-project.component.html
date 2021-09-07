@@ -29,7 +29,7 @@
       <option [selected]="selectProject.status == 'Disabled'" value="Disabled">Disabled</option>
     </select>
   </div>
-  <button type="button" class="btn addBtnBox" (click)="saveEdit()"  [disabled]="editForm.invalid" [ngClass]="editForm.invalid ? 'disabled': 'validButton' ">
+  <button type="button" class="btn addBtnBox" (click)="saveEditProject()"  [disabled]="editForm.invalid" [ngClass]="editForm.invalid ? 'disabled': 'validButton' ">
     Save Changes
   </button>
 </form>

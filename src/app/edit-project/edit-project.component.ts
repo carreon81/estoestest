@@ -18,7 +18,7 @@ export class EditProjectComponent implements OnInit {
 
 
 @Input() selectProject!:project;
-@Output() save = new EventEmitter<any>();
+@Output() saveEdit = new EventEmitter<any>();
 
   constructor(private formBuilder: FormBuilder) {
       this.editForm =  this.formBuilder.group({
@@ -39,8 +39,8 @@ export class EditProjectComponent implements OnInit {
     this.editForm.controls['status'].setValue(this.selectProject.status );
   }
 
-  saveEdit(){
+  saveEditProject(){
     let project = this.editForm.controls;
-    this.save.emit(project);
+    this.saveEdit.emit(project);
   }
 }

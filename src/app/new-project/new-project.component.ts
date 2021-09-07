@@ -14,7 +14,7 @@ export class NewProjectComponent implements OnInit {
   assigned = ''
   status = ''
 
-  @Output() save = new EventEmitter<any>();
+  @Output() saveNew = new EventEmitter<any>();
 
   constructor( private formBuilder:FormBuilder) {
     this.editForm =  this.formBuilder.group({
@@ -29,9 +29,9 @@ export class NewProjectComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveEdit(){
+  saveNewProject(){
     let project = this.editForm.controls;
-    this.save.emit(project);
+    this.saveNew.emit(project);
   }
 
 }

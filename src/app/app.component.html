@@ -12,10 +12,10 @@
     <app-list-projects (editView)="showEdit($event)" [listProjects]="projects"></app-list-projects>
   </div>
   <div *ngIf="view=='new'">
-    <app-new-project (save)="createProject($event)"></app-new-project>
+    <app-new-project (saveEdit)="createProject($event)"></app-new-project>
   </div>
   <div *ngIf="view=='edit'">
-    <app-edit-project (save)="updateProjects($event)" [selectProject]="project"></app-edit-project>
+    <app-edit-project (saveNew)="updateProjects($event)" [selectProject]="project"></app-edit-project>
   </div>
 </body>
 </html>
