@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
 
   addProject(){
     this.sub="Add project";
-    console.log("Agregando proyecto...")
     this.changeView.emit('new');
   }
 

@@ -93,7 +93,6 @@ export class AppComponent {
     project.description= newProject.description.value;
 
     this.projects.push(project);
-    console.log("New project: ",project);
     this.subText ='My projects';
     this.view= 'list';
   }
