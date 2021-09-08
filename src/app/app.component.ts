@@ -83,6 +83,7 @@ export class AppComponent {
     this.projects[this.projectId].status= project['status'].value;
     this.projects[this.projectId].description= project['description'].value;
     this.view= 'list';
+    this.subText='My projects';
   }
 
   createProject(event:any){
@@ -107,5 +108,6 @@ export class AppComponent {
     this.projects.push(project);
 
     this.view= 'list';
+    this.subText='My projects';
   }
 }

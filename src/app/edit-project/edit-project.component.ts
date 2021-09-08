@@ -42,6 +42,5 @@ export class EditProjectComponent implements OnInit {
   saveEditProject(){
     let project = this.editForm.controls;
     this.saveEdit.emit(project);
-
   }
 }
