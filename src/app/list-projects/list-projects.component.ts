@@ -34,7 +34,7 @@ export class ListProjectsComponent implements OnInit {
 
   }
 
-  /*  @HostListener('window:resize', ['$event']) */
+   @HostListener('window:resize', ['$event'])
     onResize() {
     this.innerWidth = window.innerWidth;
   }
