@@ -7,22 +7,17 @@ import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
 })
 export class HeaderComponent  {
 
-
   @Output() changeView = new EventEmitter<any>();
   @Input() title: any;
   @Input() view:string = 'list';
 
   constructor() {}
 
-
-
   addProject(){
     this.changeView.emit({view:'new',title:'Add project'});
- /*    this.title = 'Add project'; */
   }
 
   backToList(){
     this.changeView.emit({view:'list',title:'My projects'})
-  /*   this.title = 'My projects'; */
   }
 }

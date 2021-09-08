@@ -39,12 +39,6 @@ export class EditProjectComponent implements OnInit {
     this.editForm.controls['status'].setValue(this.selectProject.status );
   }
 
-  ngAfterContentInit(): void {
-    //Called after ngOnInit when the component's or directive's content has been initialized.
-    //Add 'implements AfterContentInit' to the class.
-
-  }
-
   saveEditProject(){
     let project = this.editForm.controls;
     this.saveEdit.emit(project);

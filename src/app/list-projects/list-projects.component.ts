@@ -22,16 +22,8 @@ export class ListProjectsComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.innerWidth = window.innerWidth;
     this.dataSource.data = this.listProjects;
-  }
-
-  ngAfterContentInit(): void {
-   /*  this.sub.emit('My projects'); */
-    //Called after ngOnInit when the component's or directive's content has been initialized.
-    //Add 'implements AfterContentInit' to the class.
-
   }
 
    @HostListener('window:resize', ['$event'])
@@ -45,7 +37,6 @@ export class ListProjectsComponent implements OnInit {
   }
 
   edit(project:any,projectId:number){
-   /*  this.editView.emit({view:'edit', sub:'edit Project',project,projectId}); */
     this.editView.emit({view:'edit',project,projectId});
   }
 
