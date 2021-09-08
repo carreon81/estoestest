@@ -9,16 +9,16 @@ import { project } from '../models/project.model';
 })
 
 export class EditProjectComponent implements OnInit {
+  @Input() selectProject!:project;
+  @Output() saveEdit = new EventEmitter<any>();
+  @Output() subEdit = new EventEmitter<string>();
+
   editForm:any ={};
   projectName = ''
   description = ''
   projectManager = ''
   assigned = ''
   status = ''
-
-
-@Input() selectProject!:project;
-@Output() saveEdit = new EventEmitter<any>();
 
   constructor(private formBuilder: FormBuilder) {
       this.editForm =  this.formBuilder.group({
@@ -28,10 +28,10 @@ export class EditProjectComponent implements OnInit {
         assigned : new FormControl(""),
         status : new FormControl(""),
       }, {updateOn: 'change'})
-
-    }
+  }
 
   ngOnInit(): void {
+    this.subEdit.emit('edit Project');
     this.editForm.controls['projectName'].setValue(this.selectProject.projectName);
     this.editForm.controls['description'].setValue(this.selectProject.description);
     this.editForm.controls['projectManager'].setValue(this.selectProject.projectManager);
@@ -39,8 +39,15 @@ export class EditProjectComponent implements OnInit {
     this.editForm.controls['status'].setValue(this.selectProject.status );
   }
 
+  ngAfterContentInit(): void {
+    //Called after ngOnInit when the component's or directive's content has been initialized.
+    //Add 'implements AfterContentInit' to the class.
+
+  }
+
   saveEditProject(){
     let project = this.editForm.controls;
     this.saveEdit.emit(project);
+
   }
 }

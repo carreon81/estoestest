@@ -9,7 +9,6 @@ table{
 /*   box-shadow: inset 0px -1px 0px #D9D9D9; */
 }
 
-
 .circleName{
   color: #CA4A02;
   width: 20px;
@@ -22,8 +21,6 @@ table{
   text-align: center;
   margin-right: 10px;
 }
-
-
 
 .userPhoto{
   object-fit: cover;
@@ -89,9 +86,10 @@ th{
   color: rgba(0, 0, 0, 0.85);
 }
 
-.menuProject{
+.menuProject {
+  min-width: 137px !important;
   position: absolute;
-  width: 135px;
+  width: 135px !important;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -103,6 +101,14 @@ th{
   border-radius: 4px;
 }
 
+.icon{
+  padding: 5px 14px 5px 9px;
+}
+
+.mat-menu-content {
+  padding: 0px !important;
+}
+
 .column{
   flex-direction: column;
 }
@@ -110,6 +116,7 @@ th{
 .flex{
   display: flex;
 }
+
 .menuBottom{
   border-bottom: 1px solid #DDDDDD;
 }

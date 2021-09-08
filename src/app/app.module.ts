@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 /* import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; */
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatTableModule,
 /*     NgbModule, */
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

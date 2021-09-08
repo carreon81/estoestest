@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { project } from './models/project.model';
 
 @Component({
@@ -9,10 +10,13 @@ import { project } from './models/project.model';
 
 export class AppComponent {
 
+  constructor() {
+   }
+
   title = 'estoestest';
-  view:string ="list";
+  view:string = 'list';
   projectId:number= 0;
-  subText: string = 'My projects';
+  subText:string = 'My projects';
   project!: project;
 
   projects:project[]=[
@@ -44,12 +48,23 @@ export class AppComponent {
       description:''
     },
   ]
+  ngOnInit(): void {
+  }
+
+  setView(e:any){
+    this.view = e.view;
+    this.subText= e.title;
+  }
 
   showEdit(event:any){
     this.view = event.view;
-    this.projectId = event.id;
-    this.subText = event.sub;
+    this.projectId = event.projectId;
     this.project = event.project;
+  }
+
+  changeSub(e:string){
+    console.log("entra a changesub",e)
+    this.subText = e;
   }
 
   getDate(){
@@ -67,9 +82,7 @@ export class AppComponent {
     this.projects[this.projectId].assigned = project['assigned'].value;
     this.projects[this.projectId].status= project['status'].value;
     this.projects[this.projectId].description= project['description'].value;
-    this.subText ='My projects';
     this.view= 'list';
-
   }
 
   createProject(event:any){
@@ -91,9 +104,8 @@ export class AppComponent {
     project.status= newProject.status.value;
     project.userImg= 'imgUser';
     project.description= newProject.description.value;
-
     this.projects.push(project);
-    this.subText ='My projects';
+
     this.view= 'list';
   }
 }

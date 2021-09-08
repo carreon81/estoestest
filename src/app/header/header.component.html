@@ -4,10 +4,10 @@
   </div>
   <div class="flex item nav">
     <div class="flex submenu">
-      <div id="backButton" class="flex" *ngIf="sub != 'My projects'"><div class="flex" (click)="backToList()"><img [src]="'./assets/arrowLeft.svg'"  alt='image'><p  class="backText" >Back</p></div></div>
-      <h3 class="myProjects">{{sub}}</h3>
+      <div id="backButton" class="flex" *ngIf="title !='My projects'"><div class="flex" (click)="backToList()"><img [src]="'./assets/arrowLeft.svg'"  alt='image'><p  class="backText" >Back</p></div></div>
+      <h3 class="myProjects">{{title}}</h3>
     </div>
-    <button *ngIf="sub=='My projects'"class="addBtnBox" (click)="addProject()">
+    <button *ngIf="title == 'My projects'"class="addBtnBox" (click)="addProject()">
       + Add project
     </button>
   </div>

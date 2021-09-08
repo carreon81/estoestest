@@ -1,5 +1,5 @@
-import { FormBuilder,FormControl,Validators } from '@angular/forms';
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { FormBuilder,FormControl,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-project',
@@ -7,14 +7,15 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./new-project.component.css']
 })
 export class NewProjectComponent implements OnInit {
+  @Output() saveNew = new EventEmitter<any>();
+  @Output() sub = new EventEmitter<string>();
+
   editForm:any ={};
   projectName = ''
   description = ''
   projectManager = ''
   assigned = ''
   status = ''
-
-  @Output() saveNew = new EventEmitter<any>();
 
   constructor( private formBuilder:FormBuilder) {
     this.editForm =  this.formBuilder.group({
@@ -27,11 +28,11 @@ export class NewProjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sub.emit('Add project');
   }
 
   saveNewProject(){
     let project = this.editForm.controls;
     this.saveNew.emit(project);
   }
-
 }

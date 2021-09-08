@@ -1,4 +1,3 @@
-import { debugOutputAstAsTypeScript } from '@angular/compiler';
 import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
 
 @Component({
@@ -6,22 +5,24 @@ import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  @Output() changeView = new EventEmitter<string>();
-  @Input() sub: string ='';
+export class HeaderComponent  {
 
-  constructor() { }
-  ngOnInit(): void {
 
-  }
+  @Output() changeView = new EventEmitter<any>();
+  @Input() title: any;
+  @Input() view:string = 'list';
+
+  constructor() {}
+
+
 
   addProject(){
-    this.sub="Add project";
-    this.changeView.emit('new');
+    this.changeView.emit({view:'list',title:'Add project'});
+ /*    this.title = 'Add project'; */
   }
 
   backToList(){
-    this.changeView.emit('list');
-    this.sub="My projects";
+    this.changeView.emit({view:'list',title:'My projects'})
+  /*   this.title = 'My projects'; */
   }
 }
