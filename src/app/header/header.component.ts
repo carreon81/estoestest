@@ -17,7 +17,7 @@ export class HeaderComponent  {
 
 
   addProject(){
-    this.changeView.emit({view:'list',title:'Add project'});
+    this.changeView.emit({view:'new',title:'Add project'});
  /*    this.title = 'Add project'; */
   }
 
